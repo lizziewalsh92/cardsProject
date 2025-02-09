@@ -6,10 +6,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
     <title>Card Starter</title>
     <style>
+        h1, h2, h3, h4, p
+        {
+            margin: 0;
+            padding: 0;
+        }
         h1
         {
             font-family: 'Oswald', sans-serif;
             font-size: 36px;
+            padding: 15px;
         }
 
         h2
@@ -17,20 +23,23 @@
             font-family: 'Oswald', sans-serif;
             font-size: 24px;
             font-weight: 500;
+            margin-top: 10px;
         }
 
         h3
         {
-            font-family: "Open sans", serif;
-            font-size: 16px;
-            font-weight: 600;
+            font-family: "Oswald", serif;
+            font-size: 14px;
+            font-weight: 700;
+            margin-top: 10px;
         }
 
         h4
         {
             font-family: "Open sans", serif;
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 12px;
+            font-weight: 500;
+            margin-top: 5px;
         }
 
         p
@@ -38,24 +47,37 @@
             font-family: "Open sans", serif;
             font-size: 13px;
             font-weight: 400;
+            margin-top: 5px;
         }
 
-        .songnames
+        div.big-container > * {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        div.songnames
         {
-            font-family: "Open sans", serif;
+            font-family: "Oswald", serif;
             font-size: 14px;
             font-weight: 600;
             color: rgb(27, 10, 156);
+            margin-top: 15px;
         }
-        .card {
+        div.card {
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 5px 5px 10px;
+            border-color: rgba(27, 10, 156, 0.511);
+            border-width: 10px;
+            border-style: ridge;
             margin: 20px;
             padding: 20px;
-            width: 300px;
+            padding-top: 5px;
+            width: 280px;
+            line-height: 1.5rem;
+
         }
 
-        .age
+       .age
         {
             font-family: "Open sans", serif;
             font-size: 14px;
@@ -67,6 +89,9 @@
 </head>
 <body>
     <h1>Popular Musical Artist Stats </h1>
+
+<div class="big-container">
+
     <div class="card">
         <h2>Dua Lipa</h2>
         <h3>Pop music</h3>
@@ -99,6 +124,6 @@
                 </div>
                   
             </p>
-
+    </div>
 </body>
 </html>
