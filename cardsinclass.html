@@ -22,6 +22,7 @@
             padding: 15px;
             color:rgb(27, 10, 156);
             text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.317);
+            text-align: center;
         }
 
         h2
@@ -59,8 +60,15 @@
         }
 
         div.big-container > * {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            margin: 0 auto;
+            width: 100%;
             display: inline-block;
             vertical-align: middle;
+
         }
 
         div.songnames
@@ -94,7 +102,28 @@
             color:rgb(246, 164, 41);
             text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
         }
-
+        /* iphone style*/
+        @media (max-width: 600px) {
+            div.big-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            div.card {
+                width: 300px;
+            }
+        }
+         /* tablet style*/
+        @media (min-width: 601px) and (max-width: 1000px) {
+            div.big-container {
+                display: inline-flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+            }
+            div.card {
+                width: 300px;
+            }
+        }
        
     </style>
 </head>
