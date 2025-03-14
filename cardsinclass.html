@@ -7,7 +7,8 @@
     <title>Card Starter</title>
     <style>
        html {
-        background-color: rgba(246, 164, 41, 0.635) ;
+        /* background-color: rgba(246, 164, 41, 0.635) ; */
+        background-color: #fffcf2;
        }
        
        h1, h2, h3, h4, p
@@ -20,7 +21,8 @@
             font-family: 'Oswald', sans-serif;
             font-size: 36px;
             padding: 15px;
-            color:rgb(27, 10, 156);
+            /* color:rgb(27, 10, 156); */
+            color: #403d39;
             text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.317);
             text-align: center;
         }
@@ -31,8 +33,9 @@
             font-size: 24px;
             font-weight: 500;
             margin-top: 10px;
-            color:rgb(246, 164, 41);
-            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
+            /* color:rgb(246, 164, 41); */
+            color: #eb5e28;
+            text-shadow: .5px .5px .5px #403d39;
         }
 
         h3
@@ -41,6 +44,7 @@
             font-size: 16px;
             font-weight: 700;
             margin-top: 10px;
+            color: #403d39;
         }
 
         h4
@@ -49,6 +53,7 @@
             font-size: 14px;
             font-weight: 600;
             margin-top: 5px;
+           color: #403d39;
         }
 
         p
@@ -57,6 +62,7 @@
             font-size: 13px;
             font-weight: 400;
             margin-top: 5px;
+            color: #403d39;
         }
 
         div.big-container > * {
@@ -71,36 +77,37 @@
 
         }
 
-        div.songnames
+        div.location
         {
             font-family: "Oswald", serif;
             font-size: 14px;
             font-weight: 600;
-            color: rgb(27, 10, 156);
-            margin-top: 15px;
+            color: #eb5e28;
+            margin-top: 10px;
+            text-shadow: .5px .5px .5px #403d39;
         }
         div.card {
             border-radius: 10px;
             border: 5px 5px 10px;
-            border-color: rgba(27, 10, 156, 0.511);
-            border-width: 10px;
+            border-color: #403d39;
+            border-width: 8px;
             border-style: ridge;
             margin: 20px;
             padding: 20px;
             padding-top: 5px;
             width: 280px;
             line-height: 1.5rem;
-            background-color: rgb(230, 224, 248);
+            background-color: #ccc5b9;
 
         }
 
-       .age
+       .popfact
         {
             font-family: "Open sans", serif;
             font-size: 14px;
             font-weight: 600;
-            color:rgb(246, 164, 41);
-            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.9);
+            color: #eb5e28;
+            text-shadow: .5px .5px .5px #403d39;
         }
         /* iphone style*/
         @media (max-width: 600px) {
@@ -128,23 +135,23 @@
     </style>
 </head>
 <body>
-    <h1>Popular Musical Artist Stats </h1>
+    <h1>Top 10 Largest NYCHA Developments </h1>
 
 <div class="big-container">
 
     <div class="card">
-        <h2>Dua Lipa</h2>
-        <h3>Pop music</h3>
-        <h4>London, England</h4>
-        <p>This <span class="age">29-year old</span> artist has 14 billboard hot 100 songs. Her five top songs are:
-            <div class="songnames">
-                Don't Start Now, Levitating, New Rules, Physical, and Cold Heart (Pnau Remix)
+        <h2>Red Hook I</h2>
+        <h3>Brooklyn</h3>
+        <h4>2,545 apartments</h4>
+        <p>This <span class="popfact">27-building</span> development has a total population of <span class="popfact">4,577</span> residents. The average monthly rent per unit is <span class="popfact">$555/month</span>. The development is bounded by the following streets:
+            <div class="location">
+               Dwight St., Clinton St., W 9th St., and Lorraine St.
             </div>
               
         </p>
     </div>
 
-    <div class="card">
+    <!-- <div class="card">
         <h2>Kacey Musgraves</h2>
         <h3>Country music</h3>
         <h4>Golden, Texas</h4>
@@ -164,7 +171,7 @@
                     HUMBLE.; Swimming Pools (Drank); good kid, m.A.A.d city; LOVE. (feat. Zacari); and DNA.
                 </div>
                   
-            </p>
+            </p> -->
     </div>
 </body>
 </html>
