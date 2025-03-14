@@ -1,1 +1,1 @@
-Lizzie Walsh's Coding the News In-Class Work: Cards Project
+Lizzie Walsh's Coding the News Project: Cards Project
