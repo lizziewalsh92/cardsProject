@@ -1,63 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
-    <title>Card Starter</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap"
+        rel="stylesheet">
+    <title>NYCHA Cards</title>
     <style>
-       html {
-        /* background-color: rgba(246, 164, 41, 0.635) ; */
-        background-color: #fffcf2;
-       }
-       
-       h1, h2, h3, h4, p
-        {
-            margin: 0;
-            padding: 0;
+        html, body {
+            margin: 0 auto;
+            width: 100%;
+            background-color: #fffcf2;
+            overflow-x: hidden;
         }
-        h1
-        {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        p {
+            margin: 0 auto;
+            padding: 0 auto;
+        }
+
+        h1 {
             font-family: 'Oswald', sans-serif;
             font-size: 36px;
             padding: 15px;
-            /* color:rgb(27, 10, 156); */
             color: #403d39;
             text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.317);
             text-align: center;
         }
 
-        h2
-        {
+        h2 {
             font-family: 'Oswald', sans-serif;
             font-size: 24px;
             font-weight: 500;
             margin-top: 10px;
-            /* color:rgb(246, 164, 41); */
             color: #eb5e28;
             text-shadow: .5px .5px .5px #403d39;
+            text-align: center;
         }
 
-        h3
-        {
+        h3 {
             font-family: "Oswald", serif;
             font-size: 16px;
             font-weight: 700;
             margin-top: 10px;
             color: #403d39;
+            text-align: center;
         }
 
-        h4
-        {
+        h4 {
             font-family: "Oswald", serif;
             font-size: 14px;
             font-weight: 600;
             margin-top: 5px;
-           color: #403d39;
+            color: #403d39;
+            text-align: center;
         }
 
-        p
-        {
+        p {
             font-family: "Open sans", serif;
             font-size: 13px;
             font-weight: 400;
@@ -65,34 +70,52 @@
             color: #403d39;
         }
 
-        div.big-container > * {
+        /* #big-container>* {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
-            margin: 0 auto;
-            width: 100%;
+            margin: 10px 10px 10px 10px;
+            padding: 20px;
+            width: 20%;
+            max-width: 1200px;
             display: inline-block;
             vertical-align: middle;
+            gap: 20px;
+
 
         }
 
-        div.location
-        {
-            font-family: "Oswald", serif;
-            font-size: 14px;
-            font-weight: 600;
-            color: #eb5e28;
-            margin-top: 10px;
-            text-shadow: .5px .5px .5px #403d39;
-        }
+        .card {
+            width: 280px;
+            margin: 10px;
+            box-sizing: border-box;
+            max-width: 100%;
+        } */
+
+ #big-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; 
+    gap: 10px; 
+    padding: 10px; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+.card {
+    width: 280px; 
+    margin: 5px; 
+}
+
+
         div.card {
             border-radius: 10px;
             border: 5px 5px 10px;
             border-color: #403d39;
-            border-width: 8px;
+            border-width: 7px;
             border-style: ridge;
-            margin: 20px;
+            margin: 10px;
             padding: 20px;
             padding-top: 5px;
             width: 280px;
@@ -101,77 +124,149 @@
 
         }
 
-       .popfact
-        {
+        .popfact {
             font-family: "Open sans", serif;
             font-size: 14px;
             font-weight: 600;
             color: #eb5e28;
             text-shadow: .5px .5px .5px #403d39;
         }
+
         /* iphone style*/
         @media (max-width: 600px) {
-            div.big-container {
+            #big-container {
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: space-around;
+                justify-content: inline;
             }
+
             div.card {
                 width: 300px;
             }
         }
-         /* tablet style*/
-        @media (min-width: 601px) and (max-width: 1000px) {
+
+        /* tablet style*/
+        @media (min-width: 601px) and (max-width: 1200px) {
             div.big-container {
                 display: inline-flex;
                 flex-wrap: wrap;
-                justify-content: space-around;
+                justify-content: center;
             }
+
             div.card {
-                width: 300px;
+                width: 200px;
             }
         }
-       
     </style>
 </head>
+
 <body>
     <h1>Top 10 Largest NYCHA Developments </h1>
 
-<div class="big-container">
-
-    <div class="card">
-        <h2>Red Hook I</h2>
-        <h3>Brooklyn</h3>
-        <h4>2,545 apartments</h4>
-        <p>This <span class="popfact">27-building</span> development has a total population of <span class="popfact">4,577</span> residents. The average monthly rent per unit is <span class="popfact">$555/month</span>. The development is bounded by the following streets:
-            <div class="location">
-               Dwight St., Clinton St., W 9th St., and Lorraine St.
-            </div>
-              
-        </p>
+    <div id="big-container">
     </div>
+    <script>
+        const NYCHAinfo = [
+            {
+                name: "RED HOOK I",
+                aptnum: "2545",
+                residents: "4577",
+                buildings: "27",
+                avgrent: "555",
+                boro: "BROOKLYN"
+            },
+            {
+                name: "EDENWALD",
+                aptnum: "2039",
+                residents: "4503",
+                buildings: "40",
+                avgrent: "581",
+                boro: "BRONX"
+            },
+            {
+                name: "CASTLE HILL",
+                aptnum: "2025",
+                residents: "4459",
+                buildings: "14",
+                avgrent: "580",
+                boro: "BRONX"
+            },
+            {
+                name: "BARUCH",
+                aptnum: "2194",
+                residents: "4325",
+                buildings: "17",
+                avgrent: "584",
+                boro: "MANHATTAN"
+            },
+            {
+                name: "WAGNER",
+                aptnum: "2162",
+                residents: "4276",
+                buildings: "22",
+                avgrent: "597",
+                boro: "MANHATTAN"
+            },
+            {
+                name: "GRANT",
+                aptnum: "1940",
+                residents: "3944",
+                buildings: "9",
+                avgrent: "642",
+                boro: "MANHATTAN"
+            },
+            {
+                name: "RAVENSWOOD",
+                aptnum: "2166",
+                residents: "3928",
+                buildings: "31",
+                avgrent: "654",
+                boro: "QUEENS"
+            },
+            {
+                name:"POMONOK",
+                aptnum: "2071",
+                residents: "3925",
+                buildings: "35",
+                avgrent: "620",
+                boro: "QUEENS"
+            },
+            {
+                name: "DOUGLASS",
+                aptnum: "2058",
+                residents: "3898",
+                buildings: "17",
+                avgrent: "617",
+                boro: "MANHATTAN"
+            },
+            {
+                name: "MARCY",
+                aptnum: "1717",
+                residents:"3814",
+                buildings: "27",
+                avgrent: "599",
+                boro: "BROOKLYN"
+            }
+        ];
 
-    <!-- <div class="card">
-        <h2>Kacey Musgraves</h2>
-        <h3>Country music</h3>
-        <h4>Golden, Texas</h4>
-        <p>This <span class="age">36-year old</span> artist has 4 billboard hot 100 songs. Her five top songs are:
-            <div class="songnames">
-                Follow Your Arrow, Rainbow, High Horse, Merry Go 'Round, and Justified
-            </div>
-              
-        </p>
-        </div>
-        <div class="card">
-            <h2>Kendrick Lamar</h2>
-            <h3>Hip-Hop Music</h3>
-            <h4>Compton, California</h4>
-            <p>This <span class="age">37-year old</span> artist has 54 billboard hot 100 songs. His five top songs are:
-                <div class="songnames">
-                    HUMBLE.; Swimming Pools (Drank); good kid, m.A.A.d city; LOVE. (feat. Zacari); and DNA.
-                </div>
-                  
-            </p> -->
-    </div>
+        let container = document.getElementById('big-container');
+
+        function makeCards(name, boro, aptnum, buildings, residents, avgrent) {
+            let card = document.createElement('div');
+            card.classList.add('card');
+    
+            card.innerHTML = `<class ="big-container">
+                <h2 >${name}</h2>
+                <h3 ">${boro}</h3>
+                <h4 >${aptnum} apartments</h4>
+                <p>This <span class="popfact">${buildings}-building</span> development has a total population of <span class="popfact">${residents}</span> residents. The average monthly rent per unit is <span class="popfact">$${avgrent}</span>.</p></div>
+            `;
+            container.appendChild(card);
+        }
+
+        NYCHAinfo.forEach(function (info) {
+            makeCards(info.name, info.boro, info.aptnum, info.buildings, info.residents, info.avgrent);
+        });
+    </script>
 </body>
 </html>
