@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap"
+    rel="stylesheet" />
+  <title>NYCHA Cards</title>
+  <style>
+    html,
+    body {
+      margin: 0 auto;
+      width: 100%;
+      background-color: #fffcf2;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+      margin: 0 auto;
+      padding: 0 auto;
+    }
+
+    h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 36px;
+      padding: 15px;
+      color: #403d39;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.317);
+      text-align: center;
+    }
+
+    h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 24px;
+      font-weight: 500;
+      margin-top: 10px;
+      color: #eb5e28;
+      text-shadow: 0.5px 0.5px 0.5px #403d39;
+      text-align: center;
+    }
+
+    h3 {
+      font-family: 'Oswald', serif;
+      font-size: 16px;
+      font-weight: 700;
+      margin-top: 10px;
+      color: #403d39;
+      text-align: center;
+    }
+
+    h4 {
+      font-family: 'Oswald', serif;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 5px;
+      color: #403d39;
+      text-align: center;
+    }
+
+    p {
+      font-family: 'Open sans', serif;
+      font-size: 13px;
+      font-weight: 400;
+      margin-top: 5px;
+      color: #403d39;
+    }
+
+    #big-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 10px;
+      padding: 10px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      width: 280px;
+      margin: 5px;
+    }
+
+    div.card {
+      border-radius: 10px;
+      border: 5px ridge #403d39;
+      margin: 10px;
+      padding: 20px;
+      padding-top: 5px;
+      width: 280px;
+      line-height: 1.5rem;
+      background-color: #ccc5b9;
+    }
+
+    .popfact {
+      font-family: 'Open sans', serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #eb5e28;
+      text-shadow: 0.5px 0.5px 0.5px #403d39;
+    }
+
+    .button {
+      background-color: #eb5e28;
+      color: white;
+      border: 5px ridge #403d39;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+
+    .button:hover {
+      background-color: #403d39;
+    }
+
+    .button:active {
+      background-color: #eb5e28;
+    }
+
+    @media (max-width: 600px) {
+      #big-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: inline;
+      }
+
+      div.card {
+        width: 300px;
+      }
+    }
+
+    @media (min-width: 601px) and (max-width: 1200px) {
+      div.big-container {
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      div.card {
+        width: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Top 10 Largest NYCHA Developments</h1>
+
+  <div style="text-align: center; padding: 20px;">
+    <label for="boroughFilter"><strong>Select Borough:</strong></label>
+    <select id="boroughFilter">
+      <option value="ALL">All</option>
+      <option value="MANHATTAN">Manhattan</option>
+      <option value="BROOKLYN">Brooklyn</option>
+      <option value="BRONX">Bronx</option>
+      <option value="QUEENS">Queens</option>
+    </select>
+
+    <label for="rentFilter" style="margin-left: 20px;"><strong>Max Rent: $<span id="rentValue">700</span></strong></label>
+    <input type="range" id="rentFilter" min="500" max="800" value="700" step="10" style="vertical-align: middle; margin-left: 5px;" />
+
+    <button class="button" onclick="applyFilters()" style="margin-left: 20px;">Apply Filters</button>
+  </div>
+
+  <div id="big-container"></div>
+
+  <script>
+    const NYCHAinfo = [
+      { name: "RED HOOK I", aptnum: "2545", residents: "4577", buildings: "27", avgrent: "555", boro: "BROOKLYN" },
+      { name: "EDENWALD", aptnum: "2039", residents: "4503", buildings: "40", avgrent: "581", boro: "BRONX" },
+      { name: "CASTLE HILL", aptnum: "2025", residents: "4459", buildings: "14", avgrent: "580", boro: "BRONX" },
+      { name: "BARUCH", aptnum: "2194", residents: "4325", buildings: "17", avgrent: "584", boro: "MANHATTAN" },
+      { name: "WAGNER", aptnum: "2162", residents: "4276", buildings: "22", avgrent: "597", boro: "MANHATTAN" },
+      { name: "GRANT", aptnum: "1940", residents: "3944", buildings: "9", avgrent: "642", boro: "MANHATTAN" },
+      { name: "RAVENSWOOD", aptnum: "2166", residents: "3928", buildings: "31", avgrent: "654", boro: "QUEENS" },
+      { name: "POMONOK", aptnum: "2071", residents: "3925", buildings: "35", avgrent: "620", boro: "QUEENS" },
+      { name: "DOUGLASS", aptnum: "2058", residents: "3898", buildings: "17", avgrent: "617", boro: "MANHATTAN" },
+      { name: "MARCY", aptnum: "1717", residents: "3814", buildings: "27", avgrent: "599", boro: "BROOKLYN" }
+    ];
+
+    const container = document.getElementById('big-container');
+
+    function makeCards(name, boro, aptnum, buildings, residents, avgrent) {
+    let card = document.createElement('div');
+    card.classList.add('card');
+
+    let mapsEmbedURL = `https://www.google.com/maps?q=${encodeURIComponent(name + " NYCHA, " + boro + " NY")}&output=embed`;
+
+    card.innerHTML = `
+        <h2>${name}</h2>
+        <h3>${boro}</h3>
+        <h4>${aptnum} apartments</h4>
+        <p>This <span class="popfact">${buildings}-building</span> development has a total population of <span class="popfact">${residents}</span> residents. The average monthly rent per unit is <span class="popfact">$${avgrent}</span>.</p>
+        <iframe 
+            width="100%" 
+            height="200" 
+            frameborder="0" 
+            style="border:0; border-radius: 10px; margin-top: 10px;"
+            src="${mapsEmbedURL}" 
+            allowfullscreen>
+        </iframe>
+    `;
+    container.appendChild(card);
+}
+
+    document.getElementById('rentFilter').addEventListener('input', function () {
+      document.getElementById('rentValue').textContent = this.value;
+    });
+
+    function applyFilters() {
+      const selectedBorough = document.getElementById('boroughFilter').value;
+      const maxRent = document.getElementById('rentFilter').value;
+
+      const filtered = NYCHAinfo.filter(dev => {
+        const matchesBorough = selectedBorough === 'ALL' || dev.boro === selectedBorough;
+        const matchesRent = +dev.avgrent <= maxRent;
+        return matchesBorough && matchesRent;
+      });
+
+      container.innerHTML = '';
+      filtered.forEach(dev => {
+        makeCards(dev.name, dev.boro, dev.aptnum, dev.buildings, dev.residents, dev.avgrent);
+      });
+    }
+
+    container.innerHTML = '';
+NYCHAinfo.forEach(dev => {
+  makeCards(dev.name, dev.boro, dev.aptnum, dev.buildings, dev.residents, dev.avgrent);
+});
+
+  </script>
+</body>
+
+</html>
